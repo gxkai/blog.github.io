@@ -23,7 +23,7 @@
     "tumult": "^3.0.11"
   },
   "scripts": {
-    "build": "parcel build game/index.html -d ../../lianliankan --public-url ./lianliankan",
+    "build": "parcel build game/index.html -d ../../lianliankan --public-url ./",
     "dev": "make serve"
   }
 }
