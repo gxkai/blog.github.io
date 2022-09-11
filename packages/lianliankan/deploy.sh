@@ -7,7 +7,7 @@ set -e
 #npm run build
 
 # navigate into the build output directory
-#cd dist/
+cd dist/
 
 # if you are deploying to a custom domain
 #echo 'iro.nyan.my.id' > CNAME
@@ -15,7 +15,7 @@ set -e
 #cd -
 
 #git add dist/ -f
-git add .
+git add . -f
 git commit -m 'deployer(gh-pages): deploy to github pages'
 
 # if you are deploying to https://<USERNAME>.github.io

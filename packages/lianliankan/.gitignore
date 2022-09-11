@@ -1,0 +1,5 @@
+*.auto.*
+node_modules/
+.cache/
+dist/
+yarn-error.log
