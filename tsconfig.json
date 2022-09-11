@@ -1,0 +1,4 @@
+{
+  "extends": "@laughing-cli/tsconfig",
+  "references": [{ "path": "packages/api" }, { "path": "packages/app" }, { "path": "packages/utils" }, { "path": "packages/presets" }]
+}

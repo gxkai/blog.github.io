@@ -1,0 +1,158 @@
+body {
+  background: black;
+  font-family: 'Inconsolata', monospace;
+}
+
+* {
+  color: #eee;
+}
+
+* { box-sizing: border-box; }
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+#game {
+  border: solid #444;
+  border-width: 1px 0 0 1px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 674px;
+}
+
+#game.fullscreen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+}
+
+#game > * {
+  border: solid #444;
+  border-width: 0 1px 1px 0;
+}
+
+#app {
+  flex-grow: 1;
+}
+
+#info {
+  box-sizing: border-box;
+  width: 298px;
+  padding: 16px;
+}
+
+#info section > h2 {
+  margin: 0 0 1em 0;
+  font-size: 1em;
+  color: #555;
+}
+
+#info section {
+  margin: 0 0 1em 0;
+}
+
+#info section > div {
+  margin-top: 8px;
+}
+
+#info .item-list {
+  height: 145px;
+  overflow-y: auto;
+}
+
+.tile-row > * { vertical-align: middle; }
+
+.tile {
+  display: inline-block;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+
+.tile .inner {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url("/tileset.auto.4d4febf0.svg");
+}
+
+.tile.tinted .inner {
+  /*
+  We hack the colorized tile using drop-shadow,
+  so the original background must be shifted to the left.
+
+  Source: https://stackoverflow.com/a/43959853/78145
+
+  See also code for the Tile element.
+  */
+
+  display: block;
+  background-image: url("/tileset-white.auto.c05f61c0.svg");
+  margin-left: -32px;
+}
+
+.tile-row > .tile {
+  margin-right: 10px;
+}
+
+#info .stat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#info .stat label {
+  width: 80px;
+}
+
+#info .stat .bar {
+  display: inline-block;
+  border: solid 1px #555;
+  flex-grow: 1;
+}
+
+#info .stat .bar .inner {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px;
+  background: #555;
+  transition-property: width, background-color;
+  transition-duration: 0.25s;
+}
+
+#info .stat .bar.normal .inner {
+  background: #085e00;
+}
+
+#info .stat .bar.warning .inner {
+  background: #a76c00;
+}
+
+#info .stat .bar.critical .inner {
+  background: #630000;
+}
+
+/* Compact vertical layout */
+@media screen and (max-width: 450px) {
+  .container { width: auto; }
+  #game { width: 450px; height: auto; }
+  #game { flex-direction: column; }
+  #app { height: 450px; flex-grow: initial; }
+  #game #info { width: 100%; flex-grow: 1; }
+
+  h1 { margin: 0; }
+
+  #info .item-list { height: 70px; }
+  #info .highlighted { display: none; }
+}
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
