@@ -98,7 +98,7 @@ export function randomChoice<T>(sequence: T[]): T {
 // @ts-ignore
 export function speak({ text, speechRate, lang, volume, pitch }: { text: string, speechRate?: number, lang?: 'zh-CN'| 'en-US', volume?: number, pitch?: number }, endEvent?: any, startEvent?: any) {
   if (!window.SpeechSynthesisUtterance) {
-    console.warn('当前浏览器不支持文字转语音服务')
+    alert('当前浏览器不支持文字转语音服务')
     return;
   }
 
