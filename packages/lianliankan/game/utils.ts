@@ -98,7 +98,7 @@ export function randomChoice<T>(sequence: T[]): T {
 // @ts-ignore
 export function speak({ text, speechRate, lang, volume, pitch }: { text: string, speechRate?: number, lang?: 'zh-CN'| 'en-US', volume?: number, pitch?: number }, endEvent?: any, startEvent?: any) {
   if (!window.SpeechSynthesisUtterance) {
-    alert('当前浏览器不支持文字转语音服务')
+    console.warn('当前浏览器不支持文字转语音服务')
     return;
   }
 
@@ -121,4 +121,30 @@ export function speak({ text, speechRate, lang, volume, pitch }: { text: string,
   speechSynthesis.speak(speechUtterance);
 
   return speechUtterance;
+}
+const text2AudioApi = {
+  //"url": "http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=2&text="
+  "url": "https://ai.baidu.com/aidemo?type=tns2&idx=1&tex=%s&cuid=baidu_speech_demo&cod=2&lan=zh&ctp=1&pdt=1&spd=5&per=4&vol=5&pit=5"
+};
+const util = {
+  sprintf: function () {
+    var arg = arguments,
+        str = arg[0] || '',
+        i, n;
+    for (i = 1, n = arg.length; i < n; i++) {
+      str = str.replace(/%s/, arg[i]);
+    }
+    return str;
+  }
+};
+export function speak2({text}: {text:string}) {
+  // @ts-ignore
+  var url = util.sprintf(text2AudioApi.url, encodeURI(text));
+  var audio = new Audio(url);
+  audio.currentTime = 0;
+  audio.play();
+}
+declare let responsiveVoice:any
+export function speak3(text: string) {
+  responsiveVoice.speak(text)
 }

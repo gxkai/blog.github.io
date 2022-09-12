@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "denque": "^1.4.1",
+    "easy-speech": "^1.2.0",
     "fastpriorityqueue": "^0.6.1",
     "pixi.js": "^5.0.2",
     "preact": "^8.4.2",

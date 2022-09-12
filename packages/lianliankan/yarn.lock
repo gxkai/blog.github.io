@@ -2670,6 +2670,11 @@ earcut@^2.1.5:
   resolved "https://registry.yarnpkg.com/earcut/-/earcut-2.2.1.tgz#3bae0b1b6fec41853b56b126f03a42a34b28f1d5"
   integrity sha512-5jIMi2RB3HtGPHcYd9Yyl0cczo84y+48lgKPxMijliNQaKAHEZJbdzLmKmdxG/mCdS/YD9DQ1gihL8mxzR0F9w==
 
+easy-speech@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/easy-speech/-/easy-speech-1.2.0.tgz#c7b4dd02c46f63e0cfc88a86ce6be4c5361aa2e1"
+  integrity sha512-Obg5s3oof1mPx+BnBOo48jRaOWI6hkXtm/X4HuP6lzCQWCh8DUDOHmas8YD51dCrX+CoZezN63JFXeSSh034oQ==
+
 ecc-jsbn@~0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.2.tgz#3a83a904e54353287874c564b7549386849a98c9"
