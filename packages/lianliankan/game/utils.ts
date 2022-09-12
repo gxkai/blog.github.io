@@ -94,3 +94,31 @@ export function randomChoice<T>(sequence: T[]): T {
   const i = Math.floor(Math.random() * sequence.length);
   return sequence[i];
 }
+
+// @ts-ignore
+export function speak({ text, speechRate, lang, volume, pitch }: { text: string, speechRate?: number, lang?: 'zh-CN'| 'en-US', volume?: number, pitch?: number }, endEvent?: any, startEvent?: any) {
+  if (!window.SpeechSynthesisUtterance) {
+    console.warn('当前浏览器不支持文字转语音服务')
+    return;
+  }
+
+  if (!text) {
+    return;
+  }
+
+  const speechUtterance = new SpeechSynthesisUtterance();
+  speechUtterance.text = text;
+  speechUtterance.rate = speechRate || 1;
+  speechUtterance.lang = lang || 'zh-CN';
+  speechUtterance.volume = volume || 1;
+  speechUtterance.pitch = pitch || 1;
+  speechUtterance.onend = function() {
+    endEvent && endEvent();
+  };
+  speechUtterance.onstart = function() {
+    startEvent && startEvent();
+  };
+  speechSynthesis.speak(speechUtterance);
+
+  return speechUtterance;
+}

@@ -3,8 +3,9 @@ import { Pos, Command, ActionType } from "../types";
 import { Mob } from "../mob";
 import { World } from "../world";
 import { Client } from "../client";
-import { simpleDistance, minBy } from "../utils";
+import {simpleDistance, minBy, speak} from "../utils";
 import { DEBUG } from "../debug";
+import {TILES} from "../tiles";
 
 export interface InputState {
   highlightPos: Pos | null;
@@ -188,9 +189,13 @@ export class Input {
 
     const items = this.world.findItems(player.pos.x, player.pos.y);
     if (items.length > 0) {
+      const item  = items[items.length - 1]
+      TILES[item.type].lang?.forEach(_ => {
+        speak({text: _})
+      })
       return {
         type: ActionType.PICK_UP,
-        item: items[items.length - 1],
+        item: item,
       };
     }
 

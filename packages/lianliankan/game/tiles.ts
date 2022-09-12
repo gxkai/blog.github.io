@@ -4,6 +4,7 @@ export type Tile = string;
 interface TileMeta {
   id: number;
   tint?: number;
+  lang?: string[];
 }
 
 export const TILES: Record<string, TileMeta> = {
@@ -35,12 +36,12 @@ export const TILES: Record<string, TileMeta> = {
   KEY: { id: 50 },
   SWORD: { id: 51 },
   SHIELD: { id: 52 },
-  watermelon: { id: 60 },
-  mongo: { id: 61 },
-  banana: { id: 62 },
-  orange: { id: 63 },
-  grape: { id: 64 },
-  litchi: { id: 65 },
-  Potato: { id: 66 },
-  strawberry: { id: 67 },
+  watermelon: { id: 60, lang: ['watermelon', '西瓜'] },
+  mongo: { id: 61, lang: ['mongo', '芒果'] },
+  banana: { id: 62, lang: ['banana', '香蕉'] },
+  apple: { id: 63, lang: ['apple', '苹果'] },
+  grape: { id: 64, lang: ['grape', '葡萄'] },
+  litchi: { id: 65, lang: ['litchi', '荔枝'] },
+  Potato: { id: 66, lang: ['Potato', '土豆'] },
+  strawberry: { id: 67, lang: ['strawberry', '草莓'] },
 };

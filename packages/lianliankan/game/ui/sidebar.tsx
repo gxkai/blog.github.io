@@ -53,13 +53,13 @@ export class Sidebar extends Component<{}, SidebarState> {
 
     return (
       <div id="info">
-        <section>
-          <h2>Stats:</h2>
-          <div class="stat">
-            <label>Health:</label>
-            <StatBar value={health} max={maxHealth} color />
-          </div>
-        </section>
+        {/*<section>*/}
+        {/*  <h2>Stats:</h2>*/}
+        {/*  <div class="stat">*/}
+        {/*    <label>Health:</label>*/}
+        {/*    <StatBar value={health} max={maxHealth} color />*/}
+        {/*  </div>*/}
+        {/*</section>*/}
         <section>
           <h2>Inventory:</h2>
           <div class="item-list">
