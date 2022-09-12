@@ -19,7 +19,7 @@ const TEXTURES_NORMAL: PIXI.Texture[] = new Array(100);
 const TEXTURES_WHITE: PIXI.Texture[] = new Array(100);
 const TEXTURES_GRAY: PIXI.Texture[] = new Array(100);
 
-const TEXTURE_TIMEOUT = 60*1000;
+const TEXTURE_TIMEOUT = 120*1000;
 
 function waitUntilLoaded(t: PIXI.BaseTexture): Promise<PIXI.BaseTexture> {
   return new Promise((resolve, reject) => {
