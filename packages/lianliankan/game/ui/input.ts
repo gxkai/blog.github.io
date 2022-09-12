@@ -190,9 +190,9 @@ export class Input {
     const items = this.world.findItems(player.pos.x, player.pos.y);
     if (items.length > 0) {
       const item  = items[items.length - 1]
-      TILES[item.type].lang?.map(_ => {
+      TILES[item.type].lang?.map((_, i) => {
         // speak({text: _})
-        speak3(_)
+        speak3(_, i)
       })
       return {
         type: ActionType.PICK_UP,

@@ -145,6 +145,11 @@ export function speak2({text}: {text:string}) {
   audio.play();
 }
 declare let responsiveVoice:any
-export function speak3(text: string) {
-  responsiveVoice.speak(text)
+export function speak3(text: string, i: number) {
+  if (i === 0) {
+    responsiveVoice.speak(text, 'UK English Female')
+  }
+  if (i === 1) {
+    responsiveVoice.speak(text, 'Chinese Female')
+  }
 }
