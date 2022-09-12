@@ -35,7 +35,7 @@ const obstacle = {passThrough: false, seeThrough: true, shootThrough: false};
 const water = {passThrough: false, seeThrough: true, shootThrough: true};
 
 const TERRAIN: Record<Terrain, TerrainMeta> = {
-  [Terrain.EMPTY]: {...wall},
+  [Terrain.EMPTY]: {...floor},
   [Terrain.WALL]: {...wall},
   [Terrain.WOOD]: {...wall},
 

@@ -52,7 +52,7 @@ export function loadMap(xml: string): MapData {
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
       const terrainTile = getTile(x, y, width, terrainLayer);
-      map[y][x] = terrainTile as Terrain || Terrain.WALL;
+      map[y][x] = terrainTile as Terrain || Terrain.EMPTY;
 
       const mobTile = getTile(x, y, width, mobLayer);
       if (mobTile) {

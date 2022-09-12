@@ -150,6 +150,6 @@ export function speak3(text: string, i: number) {
   //   responsiveVoice.speak(text, 'UK English Female')
   // }
   if (i === 1) {
-    responsiveVoice.speak(text, 'Chinese Female')
+    responsiveVoice.speak(`顾之找到了${text}`, 'Chinese Female')
   }
 }

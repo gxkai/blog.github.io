@@ -24,7 +24,7 @@
     "tumult": "^3.0.11"
   },
   "scripts": {
-    "build": "parcel build game/index.html -d ../../lianliankan --public-url ./",
+    "build": "rm -rf ../../lianliankan && parcel build game/index.html -d ../../lianliankan --public-url ./ && git add . && git commit -am 'chore: init;' && git push",
     "dev": "make serve"
   }
 }
